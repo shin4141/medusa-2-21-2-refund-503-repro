@@ -1,0 +1,47 @@
+{
+  "as_of_utc": "2026-10-01T06:50:17Z",
+  "target": "Medusa v2.21.2 published package",
+  "runtime": {
+    "node": "22.23.3",
+    "postgresql": "17.10"
+  },
+  "scope": "official Medusa integration test runner, isolated localhost PostgreSQL, standard local payment provider extension, synthetic localhost HTTP gateway",
+  "observed": {
+    "failureObservation": {
+      "label": "provider-failure",
+      "workflowResultCount": 0,
+      "providerId": "pp_v38gateway_local",
+      "persistedRefundCount": 0,
+      "transactions": [
+        {
+          "amount": -50,
+          "reference": "refund",
+          "reference_id": "pay_01M3V3MSCVQPDN770KJ62QJXZJ"
+        }
+      ]
+    },
+    "controlObservation": {
+      "label": "provider-success",
+      "workflowResultCount": 1,
+      "providerId": "pp_v38gateway_local",
+      "persistedRefundCount": 1,
+      "transactions": [
+        {
+          "amount": -50,
+          "reference": "refund",
+          "reference_id": "pay_01M3V3MSHAYAYAGYETW0EDB39F"
+        }
+      ]
+    },
+    "gatewayCalls": [
+      503,
+      200
+    ]
+  },
+  "test_result": "PASS 1/1",
+  "residual": [
+    "The 503 and 200 gateway responses were synthetic local responses, not a real payment provider or money movement.",
+    "The workflow was called through its documented programmatic API; the stock Admin refund endpoint was not tested.",
+    "The same runner log contains Search seed connection termination; its relation to the refund assertions is not established, while those assertions passed."
+  ]
+}

@@ -1,0 +1,5 @@
+{"level":"error","message":"Error was thrown trying to cancel payment - pay_01M3V3MSCVQPDN770KJ62QJXZJ - Error: synthetic local gateway HTTP 503","timestamp":"2026-10-01 15:50:17"}
+V38_OBSERVATION={"failureObservation":{"label":"provider-failure","workflowResultCount":0,"providerId":"pp_v38gateway_local","persistedRefundCount":0,"transactions":[{"amount":-50,"reference":"refund","reference_id":"pay_01M3V3MSCVQPDN770KJ62QJXZJ"}]},"controlObservation":{"label":"provider-success","workflowResultCount":1,"providerId":"pp_v38gateway_local","persistedRefundCount":1,"transactions":[{"amount":-50,"reference":"refund","reference_id":"pay_01M3V3MSHAYAYAGYETW0EDB39F"}]},"gatewayCalls":[503,200]}
+PASS integration-tests/http/v38-refund.spec.ts (6.992 s)
+Tests:       1 passed, 1 total
+Other same-run diagnostic: Search seed connection terminated; causal relationship to the refund assertion was not established.
